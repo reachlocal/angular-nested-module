@@ -28,7 +28,7 @@
     var modules = {};
     var namespaces = {};
 
-    this.module = function(moduleName, depsArray) {
+    function module(moduleName, depsArray) {
         var args = Array.prototype.slice.call(arguments);
         modules[moduleName] = depsArray;
         addNamespace(moduleName);
@@ -64,5 +64,5 @@
 
     }
 
-    angular.rlmodule = this.module;
+    angular.rlmodule = module;
 }());
